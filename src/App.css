@@ -1,0 +1,337 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background-color: #451650; /* Primary background color */
+  overflow-x: hidden;
+  color: #A95C9C; /* Default text color */
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+/* Cursor */
+.cursor, .cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.cursor {
+  width: 16px;
+  height: 16px;
+  background-color: #A95C9C; /* Brand color */
+  mix-blend-mode: difference;
+  box-shadow: 0 0 8px #A95C9C;
+}
+
+.cursor-trail {
+  width: 12px;
+  height: 12px;
+  background-color: #581D5D; /* Brand color */
+  filter: blur(2px);
+}
+
+/* Scroll Progress Indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #844282, #5B1E61); /* Brand colors */
+  z-index: 10000;
+  transition: width 0.15s ease-out;
+  pointer-events: none;
+}
+
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(88, 29, 94, 0.85); /* Brand color with opacity */
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.floating-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.floating-nav a {
+  color: #D992FF;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.floating-nav a:hover,
+.floating-nav a:focus-visible {
+  color: #F7A9FF;
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  padding: 100px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+/* Landing Section */
+.landing {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #581D5D 0%, #2F0F2F 100%); /* Brand colors */
+  color: #F0B2FF;
+}
+
+.three-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tagline {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 700;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: slideUpFade 1.8s ease-out forwards;
+}
+
+.highlight {
+  color: #D96FFF;
+  text-shadow: 0 0 12px #793276; /* Brand color */
+}
+
+/* About Section */
+.about {
+  background: linear-gradient(135deg, #6E4E8F, #3A1550);
+  color: #DCA1E4;
+}
+
+.parallax-timeline {
+  width: 80%;
+  max-width: 900px;
+  margin-top: 40px;
+  overflow: visible;
+}
+
+.timeline-item {
+  margin: 40px 0;
+  background: rgba(145, 65, 130, 0.25);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #793276; /* Brand color */
+  transition: box-shadow 0.3s ease;
+}
+
+.timeline-item:hover, .timeline-item:focus-visible {
+  box-shadow: 0 0 16px #944D8A; /* Brand color */
+  outline: none;
+}
+
+/* Services Section */
+.services {
+  background-color: #4C2765;
+  color: #E4B2F5;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #5B1E61; /* Brand color */
+  border-radius: 20px;
+  padding: 25px;
+  width: 240px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #844282; /* Brand color */
+}
+
+.card:hover, .card:focus-visible {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 0 20px #A95C9C; /* Brand color */
+  outline: none;
+}
+
+/* Portfolio Section */
+.portfolio {
+  background: linear-gradient(180deg, #582A5D 0%, #300F35 100%);
+  color: #DDA8F4;
+}
+
+.portfolio-tiles {
+  display: flex;
+  gap: 28px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tile {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 12px #944D8A; /* Brand color */
+  background: #440D59;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #F0C3FF;
+  padding: 12px 16px;
+}
+
+.tile:hover, .tile:focus-visible {
+  transform: translateY(-14px) rotateX(6deg) rotateY(6deg) scale(1.08);
+  box-shadow: 0 0 28px #A95C9C; /* Brand color */
+  outline: none;
+}
+
+.tile-video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.75);
+  border-radius: 16px;
+}
+
+/* Contact Section */
+.contact {
+  background: #5D2C69;
+  color: #EED3F6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 18px;
+  margin-top: 30px;
+  animation: zoomSlideIn 1.5s ease forwards;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(145, 65, 130, 0.35);
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  color: #DDB4E9;
+  resize: vertical;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: #7E4B90;
+  outline: none;
+  color: #fff;
+}
+
+.contact-form button {
+  background-color: #D66BFF;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #35002D;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible {
+  background-color: #E39AFF;
+  box-shadow: 0 0 18px #DB9CFF;
+  outline: none;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomSlideIn {
+  0% { opacity: 0; transform: scale(0.6) translateY(40px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Accessibility focus styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.card:focus-visible,
+.tile:focus-visible,
+.timeline-item:focus-visible {
+  outline: 3px solid #D46AED;
+  outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio-tiles {
+    flex-direction: column;
+    align-items: center;
+  }
+  .floating-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .tagline {
+    font-size: 2.8rem;
+  }
+}
